@@ -17,15 +17,15 @@ for intent in intents['intents']:
         # print(pattern, 'pattern', intent['patterns'], 'intent[patterns]')
         w = nltk.word_tokenize(pattern)
         print(w)
-        # print('Token is: {}'.format(w))
-        # words.extend(w)
-        # documents.append((w, intent['tag']))
+        print('Token is: {}'.format(w))
+        words.extend(w)
+        documents.append((w, intent['tag']))
 
-    #
-    #     if intent['tag'] not in classes:
-    #         classes.append(intent['tag'])
-    #
-    # print('Words list is: {}'.format(words))
-    # print('Docs are: {}'.format(documents))
-    # print('classes are: {}'.format(classes))
+
+        if intent['tag'] not in classes:
+            classes.append(intent['tag'])
+
+    print('Words list is: {}'.format(words))
+    print('Docs are: {}'.format(documents))
+    print('classes are: {}'.format(classes))
 
