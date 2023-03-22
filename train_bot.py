@@ -1,6 +1,8 @@
 import nltk
-nltk.download()
-from nltk.stem import WordNetLemmatizer
+from nltk import WordNetLemmatizer
+nltk.download('punkt')
+nltk.download('wordnet')
+lemmatizer = WordNetLemmatizer()
 import json
 import pickle
 
@@ -25,7 +27,9 @@ for intent in intents['intents']:
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
-    print('Words list is: {}'.format(words))
-    print('Docs are: {}'.format(documents))
-    print('classes are: {}'.format(classes))
+    # print('Words list is: {}'.format(words))
+    # print('Docs are: {}'.format(documents))
+    # print('classes are: {}'.format(classes))
+words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
+words = set(words)
 
