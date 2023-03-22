@@ -31,5 +31,6 @@ for intent in intents['intents']:
     # print('Docs are: {}'.format(documents))
     # print('classes are: {}'.format(classes))
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
-words = set(words)
+words = list(set(words))
+
 
