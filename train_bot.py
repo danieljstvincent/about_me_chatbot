@@ -33,4 +33,4 @@ for intent in intents['intents']:
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
 words = list(set(words))
 
-
+pickle
